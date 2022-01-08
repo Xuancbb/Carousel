@@ -1,0 +1,249 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;1,400;1,700&family=Noto+Sans:wght@700&family=Roboto:ital,wght@0,100;1,300;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap');
+
+html {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    background-color: rgb(0, 0, 0, .8);
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-family: 'Noto Sans', sans-serif;
+    transition: color .3s;
+}
+
+span {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.container {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.section-featured {
+    position: relative;
+}
+
+
+.section-featured .row.drag {
+    cursor: grabbing;
+}
+
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.item-merge {
+    width: 25%;
+    position: relative;
+    background-color: red;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}
+
+.item-merge h3 {
+    color: white;
+    font-size: 25px;
+    line-height: 1.2;
+}
+
+.item-merge h3:hover {
+    color: #02afff;
+}
+
+.item-merge .pic {
+    position: relative;
+}
+
+.item-merge .pic::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-image: linear-gradient(0deg, rgb(0, 0, 0, .8) 0%, transparent 90%);
+    transition: top .5s;
+}
+
+.item-merge:hover .pic::after {
+    top: 10%;
+}
+
+.item-merge .txt {
+    position: absolute;
+    left: 20px;
+    right: 20px;
+    bottom: 35px;
+}
+
+.item-merge .tag {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    padding: 5px 10px;
+    background-color: yellow;
+    color: black;
+    transition: .3s;
+    font-size: 22px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.item-merge .tag:hover {
+    background-color: black;
+    color: white;
+}
+
+
+.client .name span {
+    color: black;
+}
+
+.client {
+    color: #02afff;
+    visibility: visible;
+    opacity: 1;
+    transition: visibility .3s, opacity .3s;
+    font-style: italic;
+}
+
+.client .fa,
+.client a:hover {
+    color: #999999;
+}
+
+.item-merge .info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.share {
+    display: flex;
+    position: relative;
+    order: 2;
+}
+
+.share:hover~.client {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.share .share-list {
+    display: flex;
+    position: absolute;
+    right: 100%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .2s, opacity .2s;
+}
+
+.share:hover .share-list {
+    visibility: visible;
+    opacity: 1;
+}
+
+.share .fa-share-alt {
+    order: 1;
+}
+
+.share-list li {
+    margin-right: 10px;
+}
+
+.item-merge .fa-clock-o,
+.item-merge .share-list .fa {
+    color: white;
+    transition: color .3s;
+}
+
+.item-merge .time:hover,
+.item-merge .share:hover .fa-share-alt {
+    color: white;
+}
+
+
+.item-merge .share .fa-share-alt,
+.item-merge .share-list .fa:hover {
+    color: yellow;
+}
+
+.section-featured .row {
+    display: flex;
+    transform: translateX(0px);
+    transition: transform .5s;
+}
+
+
+.section-featured .row.drag {
+    cursor: grabbing;
+    transition: transform .1s;
+}
+
+
+.section-featured .tag {
+    left: 20px;
+}
+
+.section-featured .info {
+    padding-top: 15px;
+}
+
+
+.client a+a {
+    margin-left: 15px;
+}
+
+
+.item-merge .client span,
+.item-merge .client a:hover {
+    color: white;
+}
+
+
+.slide-panel {
+    position: absolute;
+    background-color: white;
+    border-radius: 50px;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%);
+}
+
+.angle {
+    font-size: 30px;
+    padding: 10px 20px;
+    transition: color .3s, background-color .3s;
+}
+
+.angle+.angle {
+    margin-left: 50px;
+}
+
+.angle:hover {
+    color: yellow;
+    background-color: black;
+}
+
+.angle-left {
+    border-radius: 50px 0px 0px 50px;
+}
+
+.angle-right {
+    border-radius: 0px 50px 50px 0px;
+}
